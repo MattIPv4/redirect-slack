@@ -1,0 +1,148 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #152347; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+main {
+  color: #99a1b3;
+  font-family: sans-serif;
+  background: #1d2c4e;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.2);
+  padding: 1rem 1.5rem;
+  max-width: 100%; }
+  main h1 {
+    font-size: 2.5rem;
+    margin: .5rem 0; }
+  main p {
+    margin: .5rem 0; }
+
+.progress-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  background: #152347;
+  width: 330px;
+  max-width: 100%;
+  border: 2px solid #152347;
+  margin: .5rem 2rem; }
+  .progress-bar:before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 0;
+    height: 100%;
+    background: #ff00aa;
+    background: linear-gradient(80deg, #ffc337 0%, #ff00aa 100%);
+    animation: 5s load 0s linear, 5s flicker 5s linear infinite; }
+  .progress-bar .progress-block {
+    flex-grow: 1;
+    border: 2px solid #152347;
+    height: 20px;
+    z-index: 1;
+    background: transparent; }
+
+@keyframes load {
+  0% {
+    width: 0%; }
+  15% {
+    width: 25%; }
+  25% {
+    width: 25%; }
+  40% {
+    width: 50%; }
+  50% {
+    width: 50%; }
+  65% {
+    width: 75%; }
+  75% {
+    width: 75%; }
+  90% {
+    width: 100%; }
+  100% {
+    width: 100%; } }
+@keyframes flicker {
+  0% {
+    width: 100%; }
+  5% {
+    width: 100%; }
+  5.1% {
+    width: 75%; }
+  10% {
+    width: 75%; }
+  10.1% {
+    width: 100%; }
+  15% {
+    width: 100%; }
+  15.1% {
+    width: 75%; }
+  20% {
+    width: 75%; }
+  20.1% {
+    width: 100%; }
+  45% {
+    width: 100%; }
+  45.1% {
+    width: 75%; }
+  55% {
+    width: 75%; }
+  55.1% {
+    width: 100%; }
+  70% {
+    width: 100%; }
+  70.1% {
+    width: 75%; }
+  75% {
+    width: 75%; }
+  75.1% {
+    width: 100%; }
+  80% {
+    width: 100%; }
+  80.1% {
+    width: 75%; }
+  85% {
+    width: 75%; }
+  85.1% {
+    width: 100%; }
+  90% {
+    width: 100%; }
+  90.1% {
+    width: 75%; }
+  95% {
+    width: 75%; }
+  95.1% {
+    width: 100%; }
+  100% {
+    width: 100%; } }
+.button {
+  cursor: pointer;
+  background: #a11ec6;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: .5rem 1rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-flex;
+  color: #fff;
+  line-height: 1.5;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .875rem;
+  vertical-align: top;
+  margin: .5rem 2rem; }
+  .button:hover {
+    color: #1d2c4e;
+    background: #92eaff; }
+
+/*# sourceMappingURL=style.css.map */
