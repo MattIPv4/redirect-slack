@@ -1,0 +1,16 @@
+{
+  "name": "redirect-slack",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Generate a Slack public invite URL using a user token",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Matt (IPv4) Cowley",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "form-data": "^3.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
