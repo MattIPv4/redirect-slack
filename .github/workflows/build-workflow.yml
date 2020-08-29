@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        token: ${{ secrets.GH_USER_TOKEN }
+        token: ${{ secrets.GH_USER_TOKEN }}
 
     - name: Navigate to Build
       run: cd build
@@ -43,7 +43,7 @@ jobs:
     - name: Regenerate Invite & Build Files
       run: npm run build
       env:
-        SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }
+        SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
 
     - name: Commit & Push Changes
       run: |
