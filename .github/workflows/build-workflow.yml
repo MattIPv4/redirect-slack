@@ -38,7 +38,7 @@ jobs:
 
     - name: Regenerate Invite & Build Files
       working-directory: ./build
-      run: npm run build
+      run: npm start
       env:
         SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
 
