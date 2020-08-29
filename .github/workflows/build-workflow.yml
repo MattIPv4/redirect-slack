@@ -1,9 +1,6 @@
 name: Regenerate Invite & Build
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron:  '0 12 */14 * *'
 
@@ -16,10 +13,8 @@ jobs:
       with:
         token: ${{ secrets.GH_USER_TOKEN }}
 
-    - name: Navigate to Build
-      run: cd build
-
     - name: Read .nvmrc
+      working-directory: ./build
       run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
       id: nvm
 
@@ -38,16 +33,17 @@ jobs:
           ${{ runner.os }}-node-
 
     - name: Install Dependencies
+      working-directory: ./build
       run: npm ci
 
     - name: Regenerate Invite & Build Files
+      working-directory: ./build
       run: npm run build
       env:
         SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
 
     - name: Commit & Push Changes
       run: |
-        cd ..
         git add index.html
         git add 404.html
         git commit -m "Updated invite"
