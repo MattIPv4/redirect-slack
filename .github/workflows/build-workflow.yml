@@ -44,6 +44,8 @@ jobs:
 
     - name: Commit & Push Changes
       run: |
+        git config user.email "me@mattcowley.co.uk"
+        git config user.name "MattIPv4"
         git add index.html
         git add 404.html
         git commit -m "Updated invite"
