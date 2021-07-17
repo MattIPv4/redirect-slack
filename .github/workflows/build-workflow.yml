@@ -11,8 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GH_USER_TOKEN }}
 
     - name: Read .nvmrc
       working-directory: ./build
@@ -45,8 +43,8 @@ jobs:
 
     - name: Commit & Push Changes
       run: |
-        git config user.email "me@mattcowley.co.uk"
-        git config user.name "MattIPv4"
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git add index.html
         git add 404.html
         git commit -m "Updated invite"
