@@ -2,7 +2,7 @@ name: Regenerate Invite & Build
 
 on:
   schedule:
-    - cron:  '0 12 */14 * *'
+    - cron:  '0 12 */7 * *'
   workflow_dispatch:
 
 jobs:
