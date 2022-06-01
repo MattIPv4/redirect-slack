@@ -10,26 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout commit
+      uses: actions/checkout@v3
 
-    - name: Read .nvmrc
-      working-directory: ./build
-      run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
-      id: nvm
-
-    - name: Use Node.js (.nvmrc)
-      uses: actions/setup-node@v1
+    - name: Install Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ steps.nvm.outputs.NVMRC }}
-
-    - name: Cache Dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ steps.nvm.outputs.NVMRC }}-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-${{ steps.nvm.outputs.NVMRC }}-
-          ${{ runner.os }}-node-
+        node-version-file: ./build/.nvmrc
+        cache: npm
 
     - name: Install Dependencies
       working-directory: ./build
