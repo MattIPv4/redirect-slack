@@ -10,7 +10,7 @@
   "author": "Matt (IPv4) Cowley",
   "license": "Apache-2.0",
   "dependencies": {
-    "form-data": "^3.0.0",
-    "node-fetch": "^2.6.1"
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.7"
   }
 }

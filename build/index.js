@@ -3,8 +3,6 @@ const FormData = require('form-data');
 const fs = require('fs').promises;
 const path = require('path');
 
-process.on('unhandledRejection', e => { throw e; });
-
 const main = async () => {
     // Create the form
     const form = new FormData();
@@ -29,9 +27,12 @@ const main = async () => {
 
     // Generate the new files
     const template = await fs.readFile(path.join(__dirname, 'template.html'), 'utf8');
-    const result = template.replace(/{{INVITE}}/g, data.url);
+    const result = template.replace(/\{\{INVITE}}/g, data.url);
     await fs.writeFile(path.join(__dirname, '..', 'index.html'), result);
     await fs.writeFile(path.join(__dirname, '..', '404.html'), result);
 };
 
-main().catch(e => { throw e; });
+main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
