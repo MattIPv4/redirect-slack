@@ -18,6 +18,7 @@ jobs:
       with:
         node-version-file: ./build/.nvmrc
         cache: npm
+        cache-dependency-path: ./build/package-lock.json
 
     - name: Install Dependencies
       working-directory: ./build
