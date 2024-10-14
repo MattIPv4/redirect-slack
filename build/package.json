@@ -4,13 +4,10 @@
   "version": "1.0.0",
   "description": "Generate a Slack public invite URL using a user token",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "author": "Matt (IPv4) Cowley",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "form-data": "^4.0.0",
-    "node-fetch": "^2.6.7"
-  }
+  "license": "Apache-2.0"
 }
