@@ -3,6 +3,8 @@ const FormData = require('form-data');
 const fs = require('fs').promises;
 const path = require('path');
 
+// See https://github.com/jackellenberger/emojme#finding-a-slack-token for SLACK_USER_TOKEN + SLACK_USER_COOKIE
+
 const main = async () => {
     // Create the form
     const form = new FormData();
@@ -16,6 +18,9 @@ const main = async () => {
         'https://mattipv4.slack.com/api/users.admin.createSharedInvite',
         {
             method: 'POST',
+            headers: {
+                Cookie: `d=${encodeURIComponent(process.env.SLACK_USER_COOKIE)}`,
+            },
             body: form,
         },
     );

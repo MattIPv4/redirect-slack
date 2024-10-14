@@ -29,6 +29,7 @@ jobs:
       run: npm start
       env:
         SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
+        SLACK_USER_COOKIE: ${{ secrets.SLACK_USER_COOKIE }}
     
     - name: Check for Changes
       id: diff
