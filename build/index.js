@@ -28,6 +28,6 @@ if (!data.ok) throw new Error(`Slack API returned error: ${data.error}`);
 
 // Generate the new files
 const template = await readFile(new URL('./template.html', import.meta.url), 'utf8');
-const result = template.replace(/\{\{INVITE}}/g, data.url);
+const result = template.replace(/\{\{INVITE}}/g, data.url).replace(/\{\{TIMESTAMP}}/g, new Date().toISOString());
 await writeFile(new URL('../index.html', import.meta.url), result);
 await writeFile(new URL('../404.html', import.meta.url), result);
